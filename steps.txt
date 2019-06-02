@@ -1,0 +1,73 @@
+1 - yarn init -y
+2 - yarn add express
+3 - yarn add nodemon eslint -D
+4 - npx eslint --init
+  4.1 - Use a popular style guide
+  4.2 - Standard
+  4.3 - JSON
+  4.4 - delete package.json.lock
+  4.5 - yarn
+5 - add .editorconfig
+6 - cria folders
+  6.1 - src
+  6.2 - src/app
+  6.3 - src/app/controllers
+  6.4 - src/app/models
+  6.5 - app/config
+7 - cria files
+  7.1 - index.js
+  7.2 - server.js
+  7.3 - routes.js
+8 - Usar docker para usar base de dados
+  8.1 - docker run --name mongonode -p 27017:27017 -d -t mongo
+      -> docker run - cria container
+      -> --name - permite dar nome para o container
+      -> -p determina onde estará rodando (porta)
+      -> -d para rodar em background
+      -> -t mongo - nome da imagem que será usada
+  8.2 - docker ps - ve os containers que estao rodando no momento
+      -> acessar http://localhost:27017/ (It looks like you are trying to access MongoDB over HTTP on the native driver port.)
+
+** Usando API REST
+Usar Json Web Token (JWT)  para trabalhar com sessoes;
+-> Gera um token a partir da verificacao de usuario e senha corretos utilizando um segredo da nossa aplicacao
+
+O token gerado DEVE ser utilizado em todas subsequentes requisicoes (front etc)
+guardamos o token por exemplo localStorage no react
+
+yarn add jsonwebtoken = cria tokens e verifica se tokens estao validos
+
+
+yarn add require-dir - ajuda nas importacoes de controllers.
+
+yarn add mongoose-paginate - ajuda no controle de informacoes a serem mostradas por vez
+
+yarn add nodemailer - enviar email pelo node js
+
+https://mailtrap.io/inboxes/503713/messages/1024234842
+
+yarn add nodemailer-express-handlebars express-handlebars - para trabalhar com template de email
+
+UTILIZAR O REDIS para utilizar outros cores da maquina e rodar o processo em background
+docker run --name noderedis -p 6379:6379 -d -t redis:alpine (cria o servidor do redis)
+
+yarn add kue - criacao das filas
+
+yarn add joi - ajuda nas validacoes (schema validator)
+
+yarn add express-validation - validacao nas rotas
+
+yarn add youch - permite que seja visto erros mais detalhadamente em ambiente de desenvolvimento
+formatador de erros
+
+yarn add express-async-handler - permite enviar os erros que acontecem dentro de funcoes assincronas
+para o nosso exception handler
+
+Quando estamos em producao e nao conseguimos saber direito os erros que acontecem
+para o usuario utilizamos uma ferramente de terceiros como Sentry (https://sentry.io/welcome/)
+para monitorar todos os erros da aplicacao
+
+yarn add @sentry/node usar para monitorar erros em producao
+
+yarn add dotenv - Adicionada no topo do server.js para fazer com que as variaveis de ambiente
+estejam disponiveis para utilizacao na configuracao.
