@@ -20,6 +20,9 @@ routes.post(
   handle(controllers.SessionController.store)
 )
 
+routes.get('/test', (req, res) => {
+  return res.send('Hello Juliani')
+})
 /**
  *  Ad routes
  */
