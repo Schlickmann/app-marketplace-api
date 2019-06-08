@@ -20,7 +20,7 @@ routes.post(
   handle(controllers.SessionController.store)
 )
 
-routes.get('/test', (req, res) => {
+routes.get('/test1', (req, res) => {
   return res.send('Hello Juliani')
 })
 /**
